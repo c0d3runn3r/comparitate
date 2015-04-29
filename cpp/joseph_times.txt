@@ -1,0 +1,5 @@
+start programming Wed Apr 29 07:51:04 PDT 2015
+end programming Wed Apr 29 08:41:53 PDT 2015
+programming time 50 minutes (includes a bathroom break and 2 conversations)
+run time ~ 1025ms 
+I'm pretty sure I could make this blistering fast if I fixed some memory alloction issues.  But I think I already proved a point here.
