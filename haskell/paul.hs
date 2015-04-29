@@ -1,5 +1,4 @@
 import System.Random.MWC
-import Control.Monad.Parallel as P
 import Control.Monad as C
 import Control.Monad.Primitive
 import System.IO
