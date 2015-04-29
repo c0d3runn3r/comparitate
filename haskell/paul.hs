@@ -1,5 +1,6 @@
 import System.Random.MWC
-import Control.Monad
+import Control.Monad.Parallel as P
+import Control.Monad as C
 import Control.Monad.Primitive
 import System.IO
 import Data.ByteString as B
@@ -19,20 +20,19 @@ rangeEnd = c2w8 'Z'
 
 genString :: Int -> Gen (PrimState IO) -> IO B.ByteString
 genString len g = do
-	str <- replicateM len $ uniformR (rangeStart, rangeEnd) g
+	str <- C.replicateM len $ uniformR (rangeStart, rangeEnd) g
 	return $ B.pack str
 
 makeStrings :: Int -> Int -> IO [B.ByteString] 
 makeStrings len nStrs = do
 	withSystemRandom $ \gen ->
-		replicateM nStrs $ do
+		C.replicateM nStrs $ do
 			text <- genString len gen :: IO B.ByteString
 			return text
 
 main :: IO ()
 main = do
-	(nStrs:strLen:path:_) <- getArgs
 	sortedStrs <- liftM L.sort $
-		makeStrings (read strLen :: Int) (read nStrs :: Int)
-	withFile path WriteMode $ \f ->
-		sequence_ $ Prelude.map (CB.hPutStrLn f) sortedStrs
+		makeStrings 4 10000 
+	withFile "strings.txt" WriteMode $ \f ->
+		C.sequence_ $ Prelude.map (CB.hPutStrLn f) sortedStrs
