@@ -1,0 +1,8 @@
+programming start Wed Apr 29 09:16:17 PDT 2015
+programming end Wed Apr 29 10:18:52 PDT 2015
+programming elapsed 62 minutes (includes 5 minute phone call and 1 or 2 minor interruptions)
+code run time 165ms
+
+I think the JVM took a lot longer to set up, the 165ms was once the VM was running
+
+
