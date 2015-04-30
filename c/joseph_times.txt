@@ -1,0 +1,2 @@
+programming: about an hour
+run time: 9.5ms!

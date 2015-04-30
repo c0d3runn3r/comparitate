@@ -1,0 +1,2 @@
+gcc joseph.c -o joseph
+./joseph
