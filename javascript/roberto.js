@@ -1,3 +1,5 @@
+var fs = require('fs');
+
 var start = new Date();
 
 var ar = [];
@@ -10,14 +12,12 @@ for(var i = 0; i < 10000; i++) {
 		+ letters[Math.floor(Math.random() * letters.length)]);
 }
 
-ar.sort();
+ar.sort(function (a, b) {
+	return a > b ? 1 : -1;
+});
 
-var output = '';
-for(var i = 0; i < ar.length; i++) {
-	output += ar[i] + '\n';
-}
+var output = ar.join('\n');
 
-var fs = require('fs');
 fs.writeFile('./roberto_output.txt', output, function(err) {
 	if(err) throw err;
 	console.log('Elapsed time: ' + (new Date() - start) + 'ms\n');
