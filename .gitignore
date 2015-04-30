@@ -1,7 +1,4 @@
 .DS_Store
-cpp/joseph_output.txt
-groovy/joseph_output.txt
-java/joseph_output.txt
-perl/joseph_output.txt
-bash/strings.txt
+joseph_output.txt
+strings.txt
 
