@@ -1,0 +1,4 @@
+start programming: Thu Apr 30 09:52:00 PDT 2015
+end programming: Thu Apr 30 10:00:00 PDT 2015
+elapsed time programming: 8 minutes
+program run time: ~210ms
